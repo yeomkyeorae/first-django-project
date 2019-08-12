@@ -1,4 +1,5 @@
 import random
+import datetime
 
 from django.shortcuts import render
 
@@ -31,3 +32,15 @@ def lotto(request):
     return render(request, 'lotto.html', context)
 
 
+def dinner(request):
+    menus = ['롯데리아', '편의점도시락', '맘스터치', '응급실떡볶이', '노은각', '피자', '치킨']
+    pick = random.choice(menus)
+    context = {
+        'pick': pick, 
+        'menus': menus,
+        'users': [],
+        'sentence': 'Life is short, You need Python + django!',
+        'datetime_now': datetime.datetime.now(),
+        'google_link': 'https://www.google.com',
+        }
+    return render(request, 'dinner.html', context)
