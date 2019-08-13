@@ -9,12 +9,12 @@ from django.shortcuts import render
 def index(request):
     # 2. >> 로직 작성 <<
     # 3. 해당하는 템플릿 반환
-    return render(request, 'index.html')
+    return render(request, 'pages/index.html')
 
 
 def hello(request, name):
     context = {'name': name}
-    return render(request, 'hello.html', context)
+    return render(request, 'pages/hello.html', context)
 
 
 def lotto(request):
@@ -29,7 +29,7 @@ def lotto(request):
     # render 함수의 필수 인자 : request, template 파일
     # 변수를 넘겨주고 싶으면 3번째 인자로 dictionary를 넘겨준다.
     # Django에서 활용하는 템플릿 언어는 Django Template Language(DTL)!
-    return render(request, 'lotto.html', context)
+    return render(request, 'pages/lotto.html', context)
 
 
 def dinner(request):
@@ -43,7 +43,7 @@ def dinner(request):
         'datetime_now': datetime.datetime.now(),
         'google_link': 'https://www.google.com',
         }
-    return render(request, 'dinner.html', context)
+    return render(request, 'pages/dinner.html', context)
 
 
 def cube(request, number):
@@ -52,7 +52,7 @@ def cube(request, number):
         'after': number ** 3,
         'numbers': [1, 2, 3],
     }
-    return render(request, 'cube.html', context)
+    return render(request, 'pages/cube.html', context)
 
 
 def about(request, name, age):
@@ -60,7 +60,7 @@ def about(request, name, age):
         'name': name,
         'age': age,
     }
-    return render(request, 'about.html', context)
+    return render(request, 'pages/about.html', context)
 
 
 def isitGwangbok(request):
@@ -73,11 +73,11 @@ def isitGwangbok(request):
         'isit': isit,
         'now': now,
     }
-    return render(request, 'isit.html', context)
+    return render(request, 'pages/isit.html', context)
 
 
 def ping(request):
-    return render(request, 'ping.html')
+    return render(request, 'pages/ping.html')
 
 
 def pong(request):
@@ -88,11 +88,11 @@ def pong(request):
     context = {
         'data': data,
     }
-    return render(request, 'pong.html', context)
+    return render(request, 'pages/pong.html', context)
 
 
 def signup(request):
-    return render(request, 'signup.html')
+    return render(request, 'pages/signup.html')
 
 
 def checkSignup(request):
@@ -107,4 +107,4 @@ def checkSignup(request):
         'greeting': greeting,
     }
 
-    return render(request, 'checkSignup.html', context)
+    return render(request, 'pages/checkSignup.html', context)
