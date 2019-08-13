@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-# pages app의 views.py 파일 불러오기
-
 urlpatterns = [
     path('', admin.site.urls),
     path('admin/', admin.site.urls),
+    # 각 앱별로 따로 urls.py를 정의하여 관리함.
     path('pages/', include('pages.urls')), 
+    path('services/', include('services.urls'))
 ]
