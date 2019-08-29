@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<style>
+
+</style>
+{% endblock %}
+
+{% block body %}
+<form action="/services/artii_result/" method="GET">
+  <label for="string">바꾸고자 하는 문장을 입력하세요: </label>
+  <input type="text" id="string" name="string"><br>
+  <label for="font">폰트를 선택하세요</label>
+  <select name="font" id="select">
+    <option value="doom" selected>doom</option>
+    <option value="marquee">marquee</option>
+    <option value="moscow">moscow</option>
+    <option value="pepper">pepper</option>
+    <option value="xcour">xcour</option>
+    <option value="graceful">graceful</option>
+    <option value="graffiti">graffiti</option>
+  </select>
+  <input type="submit" value="apply">
+</form>
+{% endblock %}
